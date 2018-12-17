@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+</head>
+<body>
+
+<div class="container" style="margin-top: 21px;">
+		<div th:replace="fragments/navigationbar :: navigationbar"></div>
+		<div class="containner" style="margin-top: 5%;">
+			<div class="row clearfix">
+				<div class="col-xs-2 column">
+					<div th:replace="fragments/student-sidebar :: student-sidebar"></div>
+				</div>
+				<div class="col-xs-10 column">
+			
+					<table class="table" id="student-courses"></table>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<form class="form-horizontal" role="form" th:action="@{/student/student-create-enrollment}" method="post">
+				<input type="submit" value="list all" class="btn btn-default" id="btnListCustomer">
+			</form>
+	
+	<!-- Delete Modal HTML -->
+			<div id="addEnrollmentModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<form id="addForm">
+							<div class="modal-header">
+								<h4 class="modal-title">Add Enrollment</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							</div>
+							<div class="modal-body">
+								<p>Are you sure you want to Enroll this Course?</p>
+								
+							</div>
+							<div class="modal-footer">
+								<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+								<input type="submit" class="btn btn-danger" value="Enroll">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+<div th:replace="fragments/footer::footer"></div>
+	<script type="text/javascript" th:src="@{/js/bootstrap-table.js}"></script>
+	<script type="text/javascript" th:src="@{/js/tables/student-create-enrollment.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap-table-export.js}"></script>
+	<script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+</body>
+</html>
