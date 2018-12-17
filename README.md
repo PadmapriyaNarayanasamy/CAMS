@@ -1,2 +1,2 @@
-# CAPS
-Course Application Processing System
+# CAMS
+Course Application Management System
